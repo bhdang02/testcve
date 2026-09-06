@@ -1,0 +1,5 @@
+qm create 103   --name web   --ostype l26   --machine pc   --bios seabios   --cpu host   --sockets 1   --
+cores 4   --memory 8192   --balloon 0   --scsihw virtio-scsi-single   --net0 virtio,bridge=vmbr1   --agent enabled=1
+  --onboot 1
+qm set 103 --sata0 local-lvm:0,import-from=/mnt/staging/WEB.qcow2,discard=on
+qm set 103 --boot order=sata0
